@@ -36,7 +36,8 @@ exports.readme = function(filename, cb) {
         pkg: pkg,
         license: licenseMap(pkg),
         year: new Date().getFullYear(),
-        sys: sys
+        sys: sys,
+        apis: module.exports
     }), function(err) {
         if (!err) {
             cb(null, readme);

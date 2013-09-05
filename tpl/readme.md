@@ -2,19 +2,25 @@
 
 {{ pkg.description }}{% if pkg.author %} by [{{pkg.author}}](https://npmjs.org/~{{pkg.author}}) {% endif %}
 
-### How to install
+### Installation
 ````
-$ npm install {{pkg.name}}
+$ npm install {{pkg.name}} // or install globally : sudo npm install {{pkg.name}} -g
 ````
-
-### Sample code
+{% if pkg.bin %}
+### Use CLI
+{% for cmd,url in pkg.bin %}
+````
+$ {{cmd}}
+````{% endfor %}
+{% endif %}
+### Example
 ````javascript
 var {{pkg.name}} = require('{{pkg.name}}');
 ````
 
 ### API
-````javascript
-````
+{% for name,code in apis %}
+- {{pkg.name}}.{{name}}(){% endfor %}
 
 ### Pull Request Welcome
 - fork this repo
