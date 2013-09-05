@@ -1,4 +1,4 @@
-## ![logo](https://cdn0.iconfinder.com/data/icons/pixelo/32/doc.png) docor ![npm](https://badge.fury.io/js/docor.png)
+## ![logo](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png) docor ![npm](https://badge.fury.io/js/docor.png)
 
 a smart and tiny doc-maker using default package.json by [turing](https://npmjs.org/~turing) 
 
@@ -45,5 +45,5 @@ THE SOFTWARE.
 
 
 ---
-![docor](https://cdn0.iconfinder.com/data/icons/pixelo/32/doc.png)
-generated using [docor](https://github.com/turingou/docor.git) @ 0.0.1. brought to you by [turing](https://npmjs.org/~turing)
+![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
+generated using [docor](https://github.com/turingou/docor.git) @ 0.0.2. brought to you by [turing](https://npmjs.org/~turing)
