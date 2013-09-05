@@ -4,13 +4,17 @@ a smart and tiny doc-maker using default package.json by [turing](https://npmjs.
 
 ### Installation
 ````
-$ npm install docor // or install globally : sudo npm install docor -g
+$ npm install docor
+// or install globally
+$ sudo npm install docor -g
 ````
 
 ### Use CLI
 
 ````
-$ docor // ensure excutes in dirs have package.json, it will create README.md ,license .gitignore & .npmignore
+// ensure excutes in dirs have package.json,
+// it will create README.md ,license .gitignore & .npmignore
+$ docor
 ````
 
 ### Example
@@ -25,11 +29,14 @@ var docor = require('docor');
 - docor.license()
 - docor.cli()
 
-### Pull Request Welcome
-- fork this repo
-- feel free to add your feature
-- make sure your feature are fully tested.
-- send me a PR, and enjoy!
+### Contributing
+- Fork this repo
+- Clone your repo
+- Install dependencies
+- Checkout a feature branch
+- Feel free to add your features
+- Make sure your features are fully tested
+- Open a pull request, and enjoy <3
 
 ### MIT license
 Copyright (c) 2013 turing
@@ -55,4 +62,4 @@ THE SOFTWARE.
 
 ---
 ![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
-generated using [docor](https://github.com/turingou/docor.git) @ 0.0.3. brought to you by [turing](https://npmjs.org/~turing)
+generated using [docor](https://github.com/turingou/docor.git) @ 0.0.4. brought to you by [turing](https://npmjs.org/~turing)

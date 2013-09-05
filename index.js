@@ -11,7 +11,7 @@ var fs = require('fs'),
 
 var licenseMap = function(pkg) {
     try {
-        return fs.readFileSync('./licenses/' + pkg.license);
+        return fs.readFileSync( __dirname + '/licenses/' + pkg.license);
     } catch (e) {
         return null;
     };
@@ -37,7 +37,7 @@ exports.readme = function(filename, cb) {
         license: licenseMap(pkg),
         year: new Date().getFullYear(),
         sys: sys,
-        apis: module.exports
+        apis: pkg.main ? require(path.join(dir, pkg.main)) : []
     }), function(err) {
         if (!err) {
             cb(null, readme);

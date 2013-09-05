@@ -1,6 +1,6 @@
 {
   "name": "docor",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "logo": "https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png",
   "description": "a smart and tiny doc-maker using default package.json",
   "main": "index.js",

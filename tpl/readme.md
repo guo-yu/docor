@@ -4,7 +4,9 @@
 
 ### Installation
 ````
-$ npm install {{pkg.name}} // or install globally : sudo npm install {{pkg.name}} -g
+$ npm install {{pkg.name}}
+// or install globally
+$ sudo npm install {{pkg.name}} -g
 ````
 {% if pkg.bin %}
 ### Use CLI
@@ -22,11 +24,14 @@ var {{pkg.name}} = require('{{pkg.name}}');
 {% for name,code in apis %}
 - {{pkg.name}}.{{name}}(){% endfor %}
 
-### Pull Request Welcome
-- fork this repo
-- feel free to add your feature
-- make sure your feature are fully tested.
-- send me a PR, and enjoy!
+### Contributing
+- Fork this repo
+- Clone your repo
+- Install dependencies
+- Checkout a feature branch
+- Feel free to add your features
+- Make sure your features are fully tested
+- Open a pull request, and enjoy <3
 {% if pkg.license %}
 ### {{ pkg.license }} license
 Copyright (c) {{ year }} {% if pkg.author %}{{pkg.author}}{% endif %}
