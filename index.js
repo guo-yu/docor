@@ -4,10 +4,10 @@ var fs = require('fs'),
     swig = require('swig'),
     consoler = require('consoler'),
     path = require('path'),
-    sys = require('./package.json'),
-    readme = swig.compileFile('./tpl/readme.md'),
-    license = swig.compileFile('./tpl/license.md'),
-    ignore = fs.readFileSync('./tpl/ignore');
+    sys = require(__dirname + '/package.json'),
+    readme = swig.compileFile(__dirname + '/tpl/readme.md'),
+    license = swig.compileFile(__dirname + '/tpl/license.md'),
+    ignore = fs.readFileSync(__dirname + '/tpl/ignore');
 
 var licenseMap = function(pkg) {
     try {
@@ -66,37 +66,44 @@ exports.license = function(cb) {
 exports.cli = function() {
     consoler.align(7);
     var filename = 'README.md';
-    if (argv.n) filename = argv.n
-    exports.readme(filename, function(err, md) {
+    var dir = process.cwd();
+    if (argv.n) filename = argv.n;
+    fs.readFile(dir + '/package.json', function(err, pkg) {
         if (!err) {
-            consoler.success(filename + ' created.');
+            exports.readme(filename, function(err, md) {
+                if (!err) {
+                    consoler.success(filename + ' created.');
+                } else {
+                    consoler.error('Opps:');
+                    console.log(err);
+                }
+            });
+            exports.license(function(err) {
+                if (!err) {
+                    consoler.success('LICENSE' + ' created.');
+                } else {
+                    consoler.error('Opps:');
+                    console.log(err);
+                }
+            });
+            exports.ignore('.gitignore', function(err) {
+                if (!err) {
+                    consoler.success('.gitignore' + ' created.');
+                } else {
+                    consoler.error('Opps:');
+                    console.log(err);
+                }
+            });
+            exports.ignore('.npmignore', function(err) {
+                if (!err) {
+                    consoler.success('.npmignore' + ' created.');
+                } else {
+                    consoler.error('Opps:');
+                    console.log(err);
+                }
+            });
         } else {
-            consoler.error('Opps:');
-            console.log(err);
-        }
-    });
-    exports.license(function(err) {
-        if (!err) {
-            consoler.success('LICENSE' + ' created.');
-        } else {
-            consoler.error('Opps:');
-            console.log(err);
-        }
-    });
-    exports.ignore('.gitignore',function(err) {
-        if (!err) {
-            consoler.success('.gitignore' + ' created.');
-        } else {
-            consoler.error('Opps:');
-            console.log(err);
-        }
-    });
-    exports.ignore('.npmignore',function(err) {
-        if (!err) {
-            consoler.success('.npmignore' + ' created.');
-        } else {
-            consoler.error('Opps:');
-            console.log(err);
+            consoler.log('404','package.json not found')
         }
     });
 }

@@ -1,9 +1,11 @@
 {
   "name": "docor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "logo": "https://cdn0.iconfinder.com/data/icons/pixelo/32/doc.png",
   "description": "a smart and tiny doc-maker using default package.json",
   "main": "index.js",
+  "author": "turing",
+  "license": "MIT",
   "bin": {
     "docor": "./bin/cli"
   },
@@ -14,16 +16,14 @@
     "type": "git",
     "url": "https://github.com/turingou/docor.git"
   },
+  "bugs": {
+    "url": "https://github.com/turingou/docor/issues"
+  },
   "keywords": [
     "readme",
     "pkg",
     "package"
-  ],
-  "author": "turing",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/turingou/docor/issues"
-  },
+  ],  
   "dependencies":{
     "optimist": "*",
     "swig": "*",
