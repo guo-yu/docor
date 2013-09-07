@@ -2,43 +2,38 @@
 
 a smart and tiny doc-maker using default package.json by [turing](https://npmjs.org/~turing) 
 
-### Installation
+### 如何安装
 ````
 $ npm install docor
-// or install globally
+// 安装到全局
 $ sudo npm install docor -g
 ````
 
-### Use CLI
+### 使用命令行
 
 ````
-// ensure excutes in dirs have package.json,
-// it will create README.md ,license .gitignore & .npmignore
 $ docor
-// 生成中文readme
-$ docor -c README.zh-CN.md // 需要指定文件名，如果不指定文件名，会覆盖README.md
 ````
 
-### Example
+### 范例代码
 ````javascript
 var docor = require('docor');
 ````
 
 ### API
 
-- docor.ignore()
-- docor.readme()
-- docor.license()
+- docor.licenses()
+- docor.create()
 - docor.cli()
 
-### Contributing
-- Fork this repo
-- Clone your repo
-- Install dependencies
-- Checkout a feature branch
-- Feel free to add your features
-- Make sure your features are fully tested
-- Open a pull request, and enjoy <3
+### 欢迎贡献代码
+- Fork 这个项目
+- Clone 你的新项目到本地
+- 使用 `npm install` 安装依赖
+- Checkout 一个特性分支
+- 在特性分支上开发你想要的功能
+- 确保功能被完善测试，最好能提供相应的单元测试代码
+- 向我提交一个 pull request，非常感谢 <3
 
 ### MIT license
 Copyright (c) 2013 turing
@@ -64,4 +59,4 @@ THE SOFTWARE.
 
 ---
 ![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
-generated using [docor](https://github.com/turingou/docor.git) @ 0.0.4. brought to you by [turing](https://npmjs.org/~turing)
+generated using [docor](https://github.com/turingou/docor.git) @ 0.0.6. brought to you by [turing](https://npmjs.org/~turing)

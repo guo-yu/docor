@@ -40,9 +40,9 @@ exports.create = function(type, filename, cb) {
         };
     if (pkg.main) {
         try {
-            locals.apis = require(path.join(dir, pkg.main))
+            locals.apis = require(path.join(dir, pkg.main));
         } catch (e) {
-            locals.apis = [];
+            locals.apis = null;
         }
     }
     fs.writeFile(path.join(dir, filename), tplMap[type](locals), function(err) {

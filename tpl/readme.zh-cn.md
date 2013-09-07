@@ -21,7 +21,7 @@ var {{pkg.name}} = require('{{pkg.name}}');
 ````
 
 ### API
-{% if apis.length > 0 %}{% for name,code in apis %}
+{% if apis %}{% for name,code in apis %}
 - {{pkg.name}}.{{name}}(){% endfor %}{% else %}详细API接口函数请查看文件： `{{pkg.main}}`{% endif %}
 
 ### 欢迎贡献代码
