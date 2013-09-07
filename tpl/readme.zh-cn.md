@@ -41,4 +41,4 @@ Copyright (c) {{ year }} {% if pkg.author %}{{pkg.author}}{% endif %}
 
 ---
 ![{{sys.name}}]({{sys.logo}})
-generated using [{{sys.name}}]({{sys.repository.url}}) @ {{sys.version}}. brought to you by [{{sys.author}}](https://npmjs.org/~{{sys.author}})
+generated using [{{sys.name}}]({{sys.repository.url}}) @ {{sys.version}}. brought to you by [turingou](https://github.com/turingou)
