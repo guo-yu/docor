@@ -2,36 +2,36 @@
 
 {{ pkg.description }}{% if pkg.author %} by [{{pkg.author}}](https://npmjs.org/~{{pkg.author}}) {% endif %}
 
-### Installation
+### 如何安装
 ````
 $ npm install {{pkg.name}}
-// or install globally
+// 安装到全局
 $ sudo npm install {{pkg.name}} -g
 ````
 {% if pkg.bin %}
-### Use CLI
+### 使用命令行
 {% for cmd,url in pkg.bin %}
 ````
 $ {{cmd}}
 ````{% endfor %}
 {% endif %}
-### Example
+### 范例代码
 ````javascript
 var {{pkg.name}} = require('{{pkg.name}}');
 ````
 
 ### API
 {% if apis.length > 0 %}{% for name,code in apis %}
-- {{pkg.name}}.{{name}}(){% endfor %}{% else %}check this file: `{{pkg.main}}`{% endif %}
+- {{pkg.name}}.{{name}}(){% endfor %}{% else %}详细API接口函数请查看文件： `{{pkg.main}}`{% endif %}
 
-### Contributing
-- Fork this repo
-- Clone your repo
-- Install dependencies
-- Checkout a feature branch
-- Feel free to add your features
-- Make sure your features are fully tested
-- Open a pull request, and enjoy <3
+### 欢迎贡献代码
+- Fork 这个项目
+- Clone 你的新项目到本地
+- 使用 `npm install` 安装依赖
+- Checkout 一个特性分支
+- 在特性分支上开发你想要的功能
+- 确保功能被完善测试，最好能提供相应的单元测试代码
+- 向我提交一个 pull request，非常感谢 <3
 {% if pkg.license %}
 ### {{ pkg.license }} license
 Copyright (c) {{ year }} {% if pkg.author %}{{pkg.author}}{% endif %}

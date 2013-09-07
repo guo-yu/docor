@@ -4,82 +4,77 @@ var fs = require('fs'),
     swig = require('swig'),
     consoler = require('consoler'),
     path = require('path'),
-    sys = require(__dirname + '/package.json'),
-    readme = swig.compileFile(__dirname + '/tpl/readme.md'),
-    license = swig.compileFile(__dirname + '/tpl/license.md'),
-    ignore = fs.readFileSync(__dirname + '/tpl/ignore');
+    sys = require(__dirname + '/package.json');
 
-var licenseMap = function(pkg) {
-    try {
-        return fs.readFileSync( __dirname + '/licenses/' + pkg.license);
-    } catch (e) {
+var tplMap = {
+    readme: swig.compileFile(__dirname + '/tpl/readme.md'),
+    readmeZhcn: swig.compileFile(__dirname + '/tpl/readme.zh-cn.md'),
+    license: swig.compileFile(__dirname + '/tpl/license.md'),
+    ignore: function() {
+        return fs.readFileSync(__dirname + '/tpl/ignore');
+    }
+}
+
+// fetch license by name
+exports.licenses = function(license) {
+    if (license) {
+        try {
+            return fs.readFileSync(__dirname + '/licenses/' + license);
+        } catch (e) {
+            return null;
+        }
+    } else {
         return null;
-    };
-};
-
-exports.ignore = function(filename, cb) {
-    var dir = process.cwd();
-    fs.writeFile(path.join(dir, filename), ignore, function(err) {
-        if (!err) {
-            cb(null);
-        } else {
-            cb(err);
-        }
-    });
+    }
 }
 
-exports.readme = function(filename, cb) {
+// create files
+exports.create = function(type, filename, cb) {
     var dir = process.cwd(),
-        pkg = require(dir + '/package.json');
-
-    fs.writeFile(filename, readme({
-        pkg: pkg,
-        license: licenseMap(pkg),
-        year: new Date().getFullYear(),
-        sys: sys,
-        apis: pkg.main ? require(path.join(dir, pkg.main)) : []
-    }), function(err) {
-        if (!err) {
-            cb(null, readme);
-        } else {
-            cb(err);
+        pkg = require(dir + '/package.json'),
+        locals = {
+            pkg: pkg,
+            license: exports.licenses(pkg.license),
+            year: new Date().getFullYear(),
+            sys: sys
+        };
+    if (pkg.main) {
+        try {
+            locals.apis = require(path.join(dir, pkg.main))
+        } catch (e) {
+            locals.apis = [];
         }
+    }
+    fs.writeFile(path.join(dir, filename), tplMap[type](locals), function(err) {
+        cb(err);
     });
 }
 
-exports.license = function(cb) {
-    var dir = process.cwd(),
-        pkg = require(dir + '/package.json');
-
-    fs.writeFile('LICENSE', license({
-        pkg: pkg,
-        license: licenseMap(pkg),
-        year: new Date().getFullYear()
-    }), function(err) {
-        if (!err) {
-            cb(null);
-        } else {
-            cb(err);
-        }
-    });
-}
-
+// cli 
 exports.cli = function() {
-    consoler.align(7);
-    var filename = 'README.md';
     var dir = process.cwd();
-    if (argv.n) filename = argv.n;
+    consoler.align(7);
+    var readme = { 
+        type: 'readme',
+        filename: 'README.md'
+    };
+    if (argv.c) { 
+        readme.type = 'readmeZhcn';
+        if (typeof(argv.c) != 'boolean') {
+            readme.filename = argv.c.toString();
+        }
+    }
     fs.readFile(dir + '/package.json', function(err, pkg) {
         if (!err) {
-            exports.readme(filename, function(err, md) {
+            exports.create(readme.type, readme.filename, function(err) {
                 if (!err) {
-                    consoler.success(filename + ' created.');
+                    consoler.success(readme.filename + ' created.');
                 } else {
                     consoler.error('Opps:');
                     console.log(err);
                 }
             });
-            exports.license(function(err) {
+            exports.create('license', 'LICENSE', function(err) {
                 if (!err) {
                     consoler.success('LICENSE' + ' created.');
                 } else {
@@ -87,7 +82,7 @@ exports.cli = function() {
                     console.log(err);
                 }
             });
-            exports.ignore('.gitignore', function(err) {
+            exports.create('ignore', '.gitignore', function(err) {
                 if (!err) {
                     consoler.success('.gitignore' + ' created.');
                 } else {
@@ -95,7 +90,7 @@ exports.cli = function() {
                     console.log(err);
                 }
             });
-            exports.ignore('.npmignore', function(err) {
+            exports.create('ignore', '.npmignore', function(err) {
                 if (!err) {
                     consoler.success('.npmignore' + ' created.');
                 } else {
@@ -104,7 +99,7 @@ exports.cli = function() {
                 }
             });
         } else {
-            consoler.log('404','package.json not found')
+            consoler.log('404', 'package.json not found')
         }
     });
 }
