@@ -1,13 +1,11 @@
 ## {% if pkg.logo %}![logo]({{pkg.logo}}) {% endif %}{{ pkg.name }} ![npm](https://badge.fury.io/js/{{ pkg.name }}.png)
 
-{{ pkg.description }}{% if pkg.author %} by [{{pkg.author}}](https://npmjs.org/~{{pkg.author}}) {% endif %}
+{{ pkg.description }}{% if pkg.author %}{% endif %}
 
 ### Installation
-````
-$ npm install {{pkg.name}}
-// or install globally
-$ sudo npm install {{pkg.name}} -g
-````
+
+![NPM](https://nodei.co/npm/{{pkg.name}}.png?downloads=true)
+
 {% if pkg.bin %}
 ### Use CLI
 {% for cmd,url in pkg.bin %}
