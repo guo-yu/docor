@@ -6,6 +6,7 @@ a smart and tiny doc-maker using default package.json.
 ````
 $ [sudo] npm install docor -g
 ````
+[![NPM](https://nodei.co/npm/docor.png)](https://nodei.co/npm/docor/) [![NPM](https://nodei.co/npm-dl/docor.png?months=6)](https://nodei.co/npm/docor/)
 
 ### Use CLI
 
