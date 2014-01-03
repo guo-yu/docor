@@ -4,102 +4,59 @@ var fs = require('fs'),
     swig = require('swig'),
     consoler = require('consoler'),
     path = require('path'),
-    sys = require(__dirname + '/package.json');
-
-var tplMap = {
-    readme: swig.compileFile(__dirname + '/tpl/readme.md'),
-    readmeZhcn: swig.compileFile(__dirname + '/tpl/readme.zh-cn.md'),
-    license: swig.compileFile(__dirname + '/tpl/license.md'),
-    ignore: function() {
-        return fs.readFileSync(__dirname + '/tpl/ignore');
-    }
-}
+    sys = require(__dirname + '/package.json'),
+    maker = require('./libs/templates');
 
 // fetch license by name
 exports.licenses = function(license) {
-    if (license) {
-        try {
-            return fs.readFileSync(__dirname + '/licenses/' + license);
-        } catch (e) {
-            return null;
-        }
-    } else {
+    if (!license) return null;
+    try {
+        return fs.readFileSync(__dirname + '/licenses/' + license);
+    } catch (e) {
         return null;
     }
-}
+};
 
 // create files
-exports.create = function(type, filename, cb) {
-    var dir = process.cwd(),
-        pkg = require(dir + '/package.json'),
-        locals = {
-            pkg: pkg,
-            license: exports.licenses(pkg.license),
-            year: new Date().getFullYear(),
-            sys: sys
-        };
-    if (pkg.main) {
-        try {
-            locals.apis = require(path.join(dir, pkg.main));
-        } catch (e) {
-            locals.apis = null;
-        }
-    }
-    fs.writeFile(path.join(dir, filename), tplMap[type](locals), function(err) {
-        cb(err);
-    });
-}
+exports.create = function(filename, callback) {
+    
+    var dir = process.cwd();
+    var pkg = require(dir + '/package.json');
+    var locals = {};
+
+    locals.pkg = pkg;
+    locals.sys = sys;
+    locals.license = exports.licenses(pkg.license);
+    locals.year = new Date().getFullYear();
+    locals.apis = null;
+
+    if (pkg.main) try { locals.apis = require(path.join(dir, pkg.main)); }
+
+    fs.writeFile(path.join(dir, filename), maker(filename)(locals), callback);
+};
+
+// check if exist
+exports.check = function(file) {
+    var dir = process.cwd();
+    return fs.existsSync(path.join(dir, file));
+};
 
 // cli 
 exports.cli = function() {
-    var dir = process.cwd();
+
     consoler.align(7);
-    var readme = { 
-        type: 'readme',
-        filename: 'README.md'
-    };
-    if (argv.c) { 
-        readme.type = 'readmeZhcn';
-        if (typeof(argv.c) != 'boolean') {
-            readme.filename = argv.c.toString();
-        }
-    }
-    fs.readFile(dir + '/package.json', function(err, pkg) {
-        if (!err) {
-            exports.create(readme.type, readme.filename, function(err) {
-                if (!err) {
-                    consoler.success(readme.filename + ' created.');
-                } else {
-                    consoler.error('Opps:');
-                    console.log(err);
-                }
-            });
-            exports.create('license', 'LICENSE', function(err) {
-                if (!err) {
-                    consoler.success('LICENSE' + ' created.');
-                } else {
-                    consoler.error('Opps:');
-                    console.log(err);
-                }
-            });
-            exports.create('ignore', '.gitignore', function(err) {
-                if (!err) {
-                    consoler.success('.gitignore' + ' created.');
-                } else {
-                    consoler.error('Opps:');
-                    console.log(err);
-                }
-            });
-            exports.create('ignore', '.npmignore', function(err) {
-                if (!err) {
-                    consoler.success('.npmignore' + ' created.');
-                } else {
-                    consoler.error('Opps:');
-                    console.log(err);
-                }
-            });
-        } else {
-            consoler.log('404', 'package.json not found')
-        }
+    
+    var dir = process.cwd();
+    var files = ['README.md','LICENSE','.gitignore', '.npmignore'];
+
+    if (argv.c) files.push('README.zh-cn.md');
+    if (!exports.check('/package.json')) return consoler.error('package.json not found');
+
+    files.forEach(function(file){
+        exports.create(file, function(err){
+            if (err) return consoler.error(err);
+            return consoler.success(file + ' has been created !');
+        });
     });
-}
+    
+};

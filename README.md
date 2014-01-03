@@ -1,28 +1,24 @@
 ## ![logo](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png) docor ![npm](https://badge.fury.io/js/docor.png)
 
-a smart and tiny doc-maker using default package.json by [turing](https://npmjs.org/~turing) 
+a smart and tiny doc-maker using default package.json.
 
 ### Installation
 ````
-$ npm install docor
-// or install globally
-$ sudo npm install docor -g
+$ [sudo] npm install docor -g
 ````
 
 ### Use CLI
 
-````
-// ensure excutes in dirs have package.json,
-// it will create README.md ,license .gitignore & .npmignore
-$ docor
-// 生成中文readme
-$ docor -c README.zh-CN.md // 需要指定文件名，如果不指定文件名，会覆盖README.md
-````
+ensure excutes in dirs have package.json. docor will create README.md ,license .gitignore & .npmignore
 
-### Example
-````javascript
-var docor = require('docor');
 ````
+$ docor
+````
+create README.md in Chinese:
+
+```
+$ docor -c
+```
 
 ### API
 
