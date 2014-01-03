@@ -1,9 +1,8 @@
 var fs = require('fs'),
+    path = require('path'),
+    consoler = require('consoler'),
     optimist = require('optimist'),
     argv = optimist.argv,
-    swig = require('swig'),
-    consoler = require('consoler'),
-    path = require('path'),
     sys = require(__dirname + '/package.json'),
     maker = require('./libs/templates');
 
@@ -17,9 +16,8 @@ exports.licenses = function(license) {
     }
 };
 
-// create files
-exports.create = function(filename, callback) {
-    
+// create readmes
+exports.readme = function(filename, callback) {
     var dir = process.cwd();
     var pkg = require(dir + '/package.json');
     var locals = {};
@@ -29,10 +27,17 @@ exports.create = function(filename, callback) {
     locals.license = exports.licenses(pkg.license);
     locals.year = new Date().getFullYear();
     locals.apis = null;
+    if (locals.license) locals.license = locals.license.toString();
 
-    if (pkg.main) try { locals.apis = require(path.join(dir, pkg.main)); }
+    if (pkg.main) try { locals.apis = require(path.join(dir, pkg.main)); } catch (err) {}
 
     fs.writeFile(path.join(dir, filename), maker(filename)(locals), callback);
+};
+
+// create files
+exports.create = function(filename, callback) {
+    if (filename.indexOf('README') > -1) return exports.readme(filename, callback);
+    return fs.writeFile(path.join(process.cwd(), filename), maker(filename)(), callback);
 };
 
 // check if exist
@@ -55,7 +60,7 @@ exports.cli = function() {
     files.forEach(function(file){
         exports.create(file, function(err){
             if (err) return consoler.error(err);
-            return consoler.success(file + ' has been created !');
+            return consoler.success('file created => [ ' + file + ' ]');
         });
     });
     

@@ -57,7 +57,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-
 ---
 ![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
 generated using [docor](https://github.com/turingou/docor.git) @ 0.0.4. brought to you by [turing](https://npmjs.org/~turing)

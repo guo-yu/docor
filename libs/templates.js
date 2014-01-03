@@ -1,4 +1,5 @@
 var path = require('path'),
+    swig = require('swig'),
     tpls = path.resolve(__dirname, '../templates/');
 
 exports = module.exports = function(filename) {

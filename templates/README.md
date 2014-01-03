@@ -4,7 +4,7 @@
 
 ### Installation
 
-![NPM](https://nodei.co/npm/{{pkg.name}}.png?downloads=true)
+[![NPM](https://nodei.co/npm/{{pkg.name}}.png)](https://nodei.co/npm/{{pkg.name}}/) [![NPM](https://nodei.co/npm-dl/{{pkg.name}}.png?months=6)](https://nodei.co/npm/{{pkg.name}}/)
 
 {% if pkg.bin %}
 ### CLI Useage
