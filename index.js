@@ -37,7 +37,7 @@ exports.readme = function(filename, callback) {
 // create files
 exports.create = function(filename, callback) {
     if (filename.indexOf('README') > -1) return exports.readme(filename, callback);
-    return fs.writeFile(path.join(process.cwd(), filename), maker(filename)(), callback);
+    return fs.writeFile(path.join(process.cwd(), filename), maker(filename.indexOf('.') === 0 ? filename.substr(1) : filename)(), callback);
 };
 
 // check if exist

@@ -1,12 +1,13 @@
 ## ![logo](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png) docor ![npm](https://badge.fury.io/js/docor.png)
 
+[![NPM](https://nodei.co/npm/docor.png)](https://nodei.co/npm/docor/) [![NPM](https://nodei.co/npm-dl/docor.png?months=6)](https://nodei.co/npm/docor/)
+
 a smart and tiny doc-maker using default package.json.
 
 ### Installation
 ````
 $ [sudo] npm install docor -g
 ````
-[![NPM](https://nodei.co/npm/docor.png)](https://nodei.co/npm/docor/) [![NPM](https://nodei.co/npm-dl/docor.png?months=6)](https://nodei.co/npm/docor/)
 
 ### Use CLI
 
