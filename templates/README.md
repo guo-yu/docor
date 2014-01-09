@@ -3,8 +3,9 @@
 {{ pkg.description }}{% if pkg.author %}{% endif %}
 
 ### Installation
-
-[![NPM](https://nodei.co/npm/{{pkg.name}}.png)](https://nodei.co/npm/{{pkg.name}}/) [![NPM](https://nodei.co/npm-dl/{{pkg.name}}.png?months=6)](https://nodei.co/npm/{{pkg.name}}/)
+````
+$ [sudo] npm install {{pkg.name}} [-g]
+````
 
 {% if pkg.bin %}
 ### CLI Useage
