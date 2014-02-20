@@ -4,7 +4,7 @@
 
 ### 如何安装
 
-[![NPM](https://nodei.co/npm/{{pkg.name}}.png)](https://nodei.co/npm/{{pkg.name}}/) [![NPM](https://nodei.co/npm-dl/{{pkg.name}}.png?months=6)](https://nodei.co/npm/{{pkg.name}}/)
+$ [sudo] npm install {{pkg.name}}
 
 {% if pkg.bin %}
 ### 使用命令行

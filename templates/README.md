@@ -4,7 +4,7 @@
 
 ### Installation
 ````
-$ [sudo] npm install {{pkg.name}} [-g]
+$ [sudo] npm install {{pkg.name}}
 ````
 
 {% if pkg.bin %}
