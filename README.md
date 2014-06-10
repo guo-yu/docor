@@ -11,7 +11,7 @@ $ [sudo] npm install docor -g
 
 ### Use CLI
 
-ensure excutes in dirs have package.json. docor will create README.md ,license .gitignore & .npmignore
+ensure executes in dirs have package.json. docor will create README.md ,license .gitignore & .npmignore
 
 ````
 $ docor
