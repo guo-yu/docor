@@ -1,0 +1,28 @@
+{
+  "name": "moduleName",
+  "version": "1.0.0",
+  "description": "module description",
+  "main": "index.js",
+  "author": "me <me@gmail.com>",
+  "license": "MIT",
+  "bin": "./bin/cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/me/module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/me/module/issues"
+  },
+  "keywords": [
+    "readme",
+    "pkg",
+    "package",
+    "package.json",
+    "document",
+    "docor"
+  ],  
+  "dependencies":{
+    "swig": "~1.4.2",
+    "consoler": "~0.2.0"
+  }
+}

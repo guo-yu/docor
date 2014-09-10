@@ -5,7 +5,10 @@
   "main": "index.js",
   "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
-  "bin": "./bin/cli",
+  "bin": "bin/cli",
+  "scripts": {
+    "example": "cd ./example && ../bin/cli"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/turingou/docor.git"
