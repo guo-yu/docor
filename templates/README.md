@@ -1,23 +1,16 @@
-## {% if pkg.logo %}![logo]({{pkg.logo}}) {% endif %}{{ pkg.name }} ![npm](https://badge.fury.io/js/{{ pkg.name }}.png)
+## {% if pkg.logo %}![{{pkg.name}}]({{pkg.logo}}) {% endif %}{{ pkg.name }} ![NPM version](https://img.shields.io/npm/v/{{ pkg.name }}.svg?style=flat) 
 
 {{ pkg.description }}{% if pkg.author %}{% endif %}
 
 ### Installation
-````
-$ [sudo] npm install {{pkg.name}}
-````
+```bash
+$ npm install {{pkg.name}}
+```
 
-{% if pkg.bin %}
-### CLI Useage
-{% for cmd,url in pkg.bin %}
-````
-$ {{cmd}}
-````{% endfor %}
-{% endif %}
 ### Example
-````javascript
+```js
 var {{pkg.name}} = require('{{pkg.name}}');
-````
+```
 
 ### API
 {% if apis %}{% for name,code in apis %}

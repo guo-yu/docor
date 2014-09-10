@@ -1,11 +1,11 @@
 {
-  "name": "moduleName",
+  "name": "module-name",
   "version": "1.0.0",
-  "description": "module description",
+  "description": "a brief description of this module",
   "main": "index.js",
   "author": "me <me@gmail.com>",
   "license": "MIT",
-  "bin": "./bin/cli",
+  "bin": "bin/cli",
   "repository": {
     "type": "git",
     "url": "https://github.com/me/module.git"
