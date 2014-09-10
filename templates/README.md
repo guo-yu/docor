@@ -9,7 +9,7 @@ $ npm install {{pkg.name}}
 
 ### Example
 ```js
-var {{pkg.name}} = require('{{pkg.name}}');
+var {{pkg.parsedName}} = require('{{pkg.name}}');
 ```
 
 ### API

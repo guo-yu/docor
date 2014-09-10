@@ -9,7 +9,7 @@ $ npm install module-name
 
 ### Example
 ```js
-var module-name = require('module-name');
+var moduleName = require('module-name');
 ```
 
 ### API
@@ -46,5 +46,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
-![docor]()
+![docor](https://raw.githubusercontent.com/turingou/docor/master/docor.png)
 built upon love by [docor](https://github.com/turingou/docor.git) v0.2.0

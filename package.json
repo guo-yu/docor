@@ -1,6 +1,7 @@
 {
   "name": "docor",
   "version": "0.2.0",
+  "logo": "https://raw.githubusercontent.com/turingou/docor/master/docor.png",
   "description": "a smart and tiny README maker using default manifest `package.json`.",
   "main": "index.js",
   "author": "turing <o.u.turing@gmail.com>",

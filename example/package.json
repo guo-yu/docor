@@ -1,7 +1,6 @@
 {
   "name": "module-name",
   "version": "1.0.0",
-  "logo": "https://raw.githubusercontent.com/turingou/docor/master/docor.png",
   "description": "a brief description of this module",
   "main": "index.js",
   "author": "me <me@gmail.com>",

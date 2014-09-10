@@ -4,19 +4,14 @@
 
 ### 如何安装
 
-$ [sudo] npm install {{pkg.name}}
+```bash
+$ npm install {{pkg.name}}
+```
 
-{% if pkg.bin %}
-### 使用命令行
-{% for cmd,url in pkg.bin %}
-````
-$ {{cmd}}
-````{% endfor %}
-{% endif %}
 ### 范例代码
-````javascript
-var {{pkg.name}} = require('{{pkg.name}}');
-````
+```js
+var {{pkg.parsedName}} = require('{{pkg.name}}');
+```
 
 ### API
 {% if apis %}{% for name,code in apis %}
