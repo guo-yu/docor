@@ -10,7 +10,7 @@ $ [sudo] npm install docor -g
 ### Useage
 
 the very first, ensure excutes in dirs which have `package.json`.
-docor will create these files: `README.md` ,`license` `.gitignore` and `.npmignore`
+docor will create these files: `README.md` ,`license` `.gitignore` and `.npmignore`.
 
 ```bash
 $ docor
