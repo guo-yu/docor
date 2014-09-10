@@ -1,6 +1,6 @@
 {
-  "name": "module-name",
-  "version": "1.0.0",
+  "name": "mime-module-name",
+  "version": "1.1.1",
   "description": "a brief description of this module",
   "main": "index.js",
   "author": "me <me@gmail.com>",
@@ -8,10 +8,10 @@
   "bin": "bin/cli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/me/module.git"
+    "url": "https://github.com/me/mime-module.git"
   },
   "bugs": {
-    "url": "https://github.com/me/module/issues"
+    "url": "https://github.com/me/mime-module/issues"
   },
   "keywords": [
     "readme",

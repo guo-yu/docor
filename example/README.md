@@ -1,15 +1,15 @@
-## module-name ![NPM version](https://img.shields.io/npm/v/module-name.svg?style=flat) 
+## mime-module-name ![NPM version](https://img.shields.io/npm/v/mime-module-name.svg?style=flat) 
 
 a brief description of this module
 
 ### Installation
 ```bash
-$ npm install module-name
+$ npm install mime-module-name
 ```
 
 ### Example
 ```js
-var moduleName = require('module-name');
+var mimeModuleName = require('mime-module-name');
 ```
 
 ### API
