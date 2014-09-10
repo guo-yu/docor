@@ -1,4 +1,4 @@
-## ![docor](./doctor.png) docor ![NPM version](https://img.shields.io/npm/v/docor.svg?style=flat)
+## ![docor](./docor.png) docor ![NPM version](https://img.shields.io/npm/v/docor.svg?style=flat)
 
 a smart and tiny README maker using default manifest `package.json`.
 
@@ -56,5 +56,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
-![docor](./doctor.png)
+![docor](./docor.png)
 generated using [docor](https://github.com/turingou/docor.git) @ 0.0.4. brought to you by [turing](https://npmjs.org/~turing)
