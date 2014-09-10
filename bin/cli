@@ -1,3 +1,16 @@
 #!/usr/bin/env node
 
-require('../index').cli();
+var dir = process.cwd();
+var docor = require('../index');
+var files = ['README.md', 'LICENSE', '.gitignore', '.npmignore'];
+
+if (!docor.checkPackage('/package.json')) 
+  return consoler.error('Docor.init(); `package.json` file not found');
+
+files.forEach(function(file) {
+  docor.createFile(file, function(err) {
+    if (err) 
+      return consoler.error(err);
+    consoler.success('file created successful => ' + file);
+  });
+});

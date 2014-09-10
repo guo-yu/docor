@@ -1,1 +1,1 @@
-module.exports = require('./libs/docor');
+module.exports = require('./lib/docor');

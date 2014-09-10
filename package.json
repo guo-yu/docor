@@ -1,17 +1,11 @@
 {
   "name": "docor",
-  "version": "0.1.4",
-  "logo": "https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png",
-  "description": "a smart and tiny doc-maker using default package.json",
+  "version": "0.2.0",
+  "description": "a smart and tiny README maker using default manifest `package.json`.",
   "main": "index.js",
-  "author": "turing",
+  "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
-  "bin": {
-    "docor": "./bin/cli"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "bin": "./bin/cli",
   "repository": {
     "type": "git",
     "url": "https://github.com/turingou/docor.git"
@@ -22,11 +16,13 @@
   "keywords": [
     "readme",
     "pkg",
-    "package"
+    "package",
+    "package.json",
+    "document",
+    "docor"
   ],  
   "dependencies":{
-    "optimist": "*",
-    "swig": "*",
-    "consoler": "*"
+    "swig": "~1.4.2",
+    "consoler": "~0.2.0"
   }
 }

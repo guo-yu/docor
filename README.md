@@ -1,33 +1,20 @@
-## ![logo](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png) docor ![npm](https://badge.fury.io/js/docor.png)
+## ![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png) docor ![npm](https://badge.fury.io/js/docor.png)
 
-[![NPM](https://nodei.co/npm/docor.png)](https://nodei.co/npm/docor/) [![NPM](https://nodei.co/npm-dl/docor.png?months=6)](https://nodei.co/npm/docor/)
-
-a smart and tiny doc-maker using default package.json.
+a smart and tiny README maker using default manifest `package.json`.
 
 ### Installation
-````
+```bash
 $ [sudo] npm install docor -g
-````
+```
 
-### Use CLI
+### Useage
 
-ensure excutes in dirs have package.json. docor will create README.md ,license .gitignore & .npmignore
+the very first, ensure excutes in dirs which have `package.json`.
+docor will create these files: `README.md` ,`license` `.gitignore` and `.npmignore`
 
-````
+```bash
 $ docor
-````
-create README.md in Chinese:
-
 ```
-$ docor -c
-```
-
-### API
-
-- docor.ignore()
-- docor.readme()
-- docor.license()
-- docor.cli()
 
 ### Contributing
 - Fork this repo
@@ -39,7 +26,7 @@ $ docor -c
 - Open a pull request, and enjoy <3
 
 ### MIT license
-Copyright (c) 2013 turing
+Copyright (c) 2013 turing &lt;o.u.turing@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
