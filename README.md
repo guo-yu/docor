@@ -1,6 +1,6 @@
 ## ![docor](./docor.png) docor ![NPM version](https://img.shields.io/npm/v/docor.svg?style=flat)
 
-a smart and tiny README maker using default manifest `package.json`.
+a tiny cli tool to create elegant readme by manifest files, like `package.json`, `bower.json` and `manifest.json`
 
 ### Installation
 ```bash
@@ -9,8 +9,7 @@ $ [sudo] npm install docor -g
 
 ### Useage
 
-the very first, ensure excutes in dirs which have `package.json`.
-docor will create these files: `README.md` ,`license` `.gitignore` and `.npmignore`.
+The very first, Ensure excutes `docor` in directory where contains one manifest file in support manifest files. As a cli tool, Docor will create these files: `README.md` ,`license` `.gitignore` and `.npmignore`.
 
 ```bash
 $ docor
@@ -18,12 +17,20 @@ $ docor
 
 ### Example
 
+To run built-in examples:
+
 ```bash
 $ git clone git@github.com:turingou/docor.git
 $ cd docor
 $ npm install
 $ npm run example
 ```
+
+### Supported manifest files
+
+- `package.json`: NPM manifest.
+- `bower.json`: The front-end package manager Bower's manifest.
+- `manifest.json`: Chrome App's manifest.
 
 ### Contributing
 - Fork this repo

@@ -1,7 +1,12 @@
 .DS_*
+*.log
+logs
+
 node_modules
+bower_componets
+
 *.sublime*
+
 psd
 thumb
-*.log
-*.backup.md
+sketch

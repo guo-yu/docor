@@ -1,8 +1,7 @@
 {
   "name": "docor",
-  "version": "0.2.0",
-  "logo": "https://raw.githubusercontent.com/turingou/docor/master/docor.png",
-  "description": "a smart and tiny README maker using default manifest `package.json`.",
+  "version": "0.3.0",
+  "description": "a tiny cli tool to create elegant readme by manifest files, like `package.json`, `bower.json` and `manifest.json`",
   "main": "index.js",
   "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
@@ -24,7 +23,7 @@
     "package.json",
     "document",
     "docor"
-  ],  
+  ],
   "dependencies":{
     "swig": "~1.4.2",
     "consoler": "~0.2.0"

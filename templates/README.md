@@ -1,4 +1,4 @@
-## {% if pkg.logo %}![{{pkg.name}}]({{pkg.logo}}) {% endif %}{{ pkg.name }} ![NPM version](https://img.shields.io/npm/v/{{ pkg.name }}.svg?style=flat) 
+## {% if pkg.logo %}![{{pkg.name}}]({{pkg.logo}}) {% endif %}{{ pkg.name }} ![NPM version](https://img.shields.io/npm/v/{{ pkg.name }}.svg?style=flat)
 
 {{ pkg.description }}{% if pkg.author %}{% endif %}
 
@@ -17,13 +17,14 @@ var {{pkg.parsedName}} = require('{{pkg.name}}');
 - {{pkg.name}}.{{name}}(){% endfor %}{% else %}check this file: `{{pkg.main}}`{% endif %}
 
 ### Contributing
-- Fork this repo
-- Clone your repo
-- Install dependencies
+- Fork this Repo first
+- Clone your Repo
+- Install dependencies by `$ npm install`
 - Checkout a feature branch
 - Feel free to add your features
 - Make sure your features are fully tested
-- Open a pull request, and enjoy <3
+- Publish your local branch, Open a pull request
+- Enjoy hacking <3
 {% if pkg.license %}
 ### {{ pkg.license }} license
 Copyright (c) {{ year }} {% if pkg.author %}{{pkg.author}}{% endif %}
