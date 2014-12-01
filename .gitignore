@@ -10,3 +10,7 @@ bower_componets
 psd
 thumb
 sketch
+
+example/.*
+example/README.md
+example/LICENSE
