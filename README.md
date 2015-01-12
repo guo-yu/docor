@@ -15,6 +15,12 @@ The very first, Ensure excutes `docor` in directory where contains one manifest 
 $ docor
 ```
 
+#### Supported manifest files
+
+- `package.json`: NPM manifest.
+- `bower.json`: The front-end package manager Bower's manifest.
+- `manifest.json`: Chrome App's manifest.
+
 ### Example
 
 To run built-in examples:
@@ -25,12 +31,6 @@ $ cd docor
 $ npm install
 $ npm run example
 ```
-
-### Supported manifest files
-
-- `package.json`: NPM manifest.
-- `bower.json`: The front-end package manager Bower's manifest.
-- `manifest.json`: Chrome App's manifest.
 
 ### Contributing
 - Fork this repo
