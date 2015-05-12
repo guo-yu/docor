@@ -7,7 +7,8 @@
   "license": "MIT",
   "bin": "bin/cli",
   "scripts": {
-    "build": "node_modules/.bin/babel lib --out-dir dist --source-maps",
+    "build": "node_modules/.bin/babel lib --out-dir dist --source-map",
+    "build": "node_modules/.bin/babel lib --out-dir dist --source-maps --watch",
     "example": "cd ./example && ../bin/cli"
   },
   "repository": {
