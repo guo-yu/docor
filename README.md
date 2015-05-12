@@ -7,7 +7,7 @@ a tiny cli tool to create elegant readme by manifest files, like `package.json`,
 $ [sudo] npm install docor -g
 ```
 
-### Useage
+### Usage
 
 The very first, Ensure excutes `docor` in directory where contains one manifest file in support manifest files. As a cli tool, Docor will create these files: `README.md` ,`license` `.gitignore` and `.npmignore`.
 
