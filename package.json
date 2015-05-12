@@ -2,11 +2,12 @@
   "name": "docor",
   "version": "0.3.0",
   "description": "a tiny cli tool to create elegant readme by manifest files, like `package.json`, `bower.json` and `manifest.json`",
-  "main": "index.js",
+  "main": "dist/docor.js",
   "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
   "bin": "bin/cli",
   "scripts": {
+    "build": "node_modules/.bin/babel lib --out-dir dist --source-maps",
     "example": "cd ./example && ../bin/cli"
   },
   "repository": {
@@ -27,5 +28,8 @@
   "dependencies":{
     "swig": "~1.4.2",
     "consoler": "~0.2.0"
+  },
+  "devDependencies": {
+    "babel": "5.1.11"
   }
 }

@@ -1,22 +1,3 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var path = require('path');
-var consoler = require('consoler');
-var docor = require('../index');
-var files = ['README.md', 'LICENSE', '.gitignore', '.npmignore'];
-
-if (!checkPackage('package.json')) 
-  return consoler.error('Docor.init(); `package.json` file not found');
-
-files.forEach(function(file) {
-  docor.createFile(file, function(err) {
-    if (err) 
-      return consoler.error(err);
-    consoler.success(file + ' created');
-  });
-});
-
-function checkPackage(file) {
-  return fs.existsSync(path.join(process.cwd(), file));
-}
+require('../dist/cli')()
